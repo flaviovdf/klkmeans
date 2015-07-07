@@ -20,8 +20,8 @@ def _surprisal_mat(X):
     #Some elements have zero prob, ingore and treat warnings
     with np.errstate(divide='ignore', invalid='ignore'):
         L = np.log2(X)
-        L[np.isnan(X)] = 0
-        L[np.isinf(X)] = 0
+        L[np.isnan(L)] = 0
+        L[np.isinf(L)] = 0
     return L
 
 def _dist_all(X, C):
